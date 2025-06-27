@@ -92,6 +92,10 @@ function App() {
   return (
     <>
       <div
+      className="w-screen h-screen bg-cover bg-no-repeat bg-center"
+      style={{ backgroundImage: "url('/wallpaper.jpeg')" }}
+    >
+      <div
         className="w-screen h-screen  absolute overflow-hidden p-4"
         onClick={handleDeselect}
       >
@@ -191,7 +195,7 @@ function App() {
           </div>
         </div>
       )}
-
+  </div>
     </>
   )
 }
