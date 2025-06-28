@@ -113,7 +113,7 @@ function App() {
               id !== 10 ? (
                 <div
                   key={id}
-                  className={`w-20 text-white text-sm m-2 flex flex-col items-center cursor-pointer p-1 ${selectedId === id ? 'bg-white/20 rounded border border-blue-400' : ''
+                  className={`w-20 h-24 text-white text-sm m-2 flex flex-col items-center cursor-pointer p-1 ${selectedId === id ? 'bg-white/20 rounded border border-blue-400' : ''
                     }`}
                   onClick={(e) => {
                     e.stopPropagation();
