@@ -1,9 +1,9 @@
-import React from 'react'
-import { Rnd } from 'react-rnd'
-import { icons } from '../App'
-import GoogleClone from './GoogleClone'
 
-const Internet = (props) => {
+import { Rnd } from 'react-rnd'
+
+import horror from '../assets/horror.mp4'
+
+const Video = (props) => {
     return (
         <div>
             <Rnd
@@ -11,7 +11,7 @@ const Internet = (props) => {
                     x: 200,
                     y: 100,
                     width: 500,
-                    height: 500,
+                    height: 300,
                 }}
                 minWidth={300}
                 minHeight={200}
@@ -22,7 +22,7 @@ const Internet = (props) => {
                 <div className='w-full h-full flex flex-col rounded-md overflow-hidden border-1 border-black/30'>
                     <div className='app-header bg-black/30 backdrop-blur-md h-[24px] flex flex-row justify-between items-center px-2'>
                         <p className='text-white'>
-                            Internet Explorer
+                            Horror
                         </p>
                         <div className='flex'>
                             <button className='text-white w-8 h-[24px] border border-black/30'>-</button>
@@ -30,7 +30,7 @@ const Internet = (props) => {
                             <button
                                 className='bg-red-500 text-white w-8 h-[24px] hover:shadow-[0_0_10px_2px_rgba(239,68,68,0.7)] transition duration-300'
                                 onClick={() => {
-                                    const newArray = props.openApp.filter(appId => appId !== 2);
+                                    const newArray = props.openApp.filter(appId => appId !== 10);
                                     props.setOpenApp(newArray);
                                 }}
                             >
@@ -39,8 +39,9 @@ const Internet = (props) => {
                         </div>
                     </div>
 
-                    <div className='bg-white flex-1 p-4'>
-                        <GoogleClone></GoogleClone>
+                    <div className='bg-black/30 backdrop-blur-md flex-1 '>
+                        <video src={horror} autoPlay loop
+                        ></video>
                     </div>
                 </div>
             </Rnd>
@@ -48,4 +49,4 @@ const Internet = (props) => {
     )
 }
 
-export default Internet
+export default Video
