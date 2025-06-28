@@ -4,7 +4,7 @@ import thispc from './assets/computer.webp'
 import internet from './assets/internet.webp'
 import bin from './assets/bin.webp'
 import pdf from './assets/pdf.webp'
-import twit from './assets/twitter.png'
+import leet from './assets/twitter.png'
 import lin from './assets/lin.png'
 import git from './assets/git.png'
 import doom from './assets/doom.webp'
@@ -31,7 +31,7 @@ export const icons = [
   { id: 2, label: 'Internet', icon: internet },
   { id: 3, label: 'Recycle Bin', icon: bin },
   { id: 4, label: 'Resume', icon: pdf },
-  { id: 5, label: 'X (Twitter)', icon: twit },
+  { id: 5, label: 'LeetCode', icon: leet },
   { id: 6, label: 'My Projects', icon: doom },
   { id: 7, label: 'GitHub', icon: git },
   { id: 8, label: 'LinkedIn', icon: lin },
@@ -65,6 +65,14 @@ function App() {
     if (openApp.includes(7)) {
       window.open('https://github.com/Shubhkarman801', '_blank');
       setOpenApp(openApp.filter(appId => appId !== 7));
+    }
+    if (openApp.includes(4)) {
+      window.open('https://drive.google.com/file/d/1XRM04RWIOj2gDV-YcKnaTT_CWVJMwbyW/view?usp=share_link', '_blank');
+      setOpenApp(openApp.filter(appId => appId !== 4));
+    }
+    if (openApp.includes(5)) {
+      window.open('https://leetcode.com/u/shubhsingh786/', '_blank');
+      setOpenApp(openApp.filter(appId => appId !== 5));
     }
   }, [openApp]);
 
@@ -113,7 +121,7 @@ function App() {
               id !== 10 ? (
                 <div
                   key={id}
-                  className={`w-20 h-24 text-white text-sm m-2 flex flex-col items-center cursor-pointer p-1 ${selectedId === id ? 'bg-white/20 rounded border border-blue-400' : ''
+                  className={`w-20 h-28 text-white text-sm m-2 flex flex-col items-center cursor-pointer p-1 ${selectedId === id ? 'bg-white/20 rounded border border-blue-400' : ''
                     }`}
                   onClick={(e) => {
                     e.stopPropagation();
@@ -122,7 +130,7 @@ function App() {
                   onDoubleClick={() => { if (!openApp.includes(id)) setOpenApp([...openApp, id]); }}
                 >
                   <img src={icon} alt={label} className="w-12 h-12" />
-                  <p className="text-center">{label}</p>
+                  <p className="text-center my-2">{label}</p>
                 </div>) : null
             ))}
           </div>
@@ -135,9 +143,7 @@ function App() {
         {openApp.includes(6) && (
           <Projects openApp={openApp} setOpenApp={setOpenApp}></Projects>
         )}
-        {openApp.includes(5) && (
-          <Twitter openApp={openApp} setOpenApp={setOpenApp}></Twitter>
-        )}
+
         {openApp.includes(9) && (
           <Notes openApp={openApp} setOpenApp={setOpenApp}></Notes>
         )}
@@ -153,11 +159,11 @@ function App() {
             {
               openApp.map((id) => {
                 const app = icons.find(icon => icon.id === id);
-                return (
-                  <div key={id} className='w-auto bg-white/30 p-2 mx-2 max-h-[40px] rounded-md flex flex-row items-center'>
+                 return (
+                  (id!==1 && id!==3) ? <div key={id} className='w-auto bg-white/30 p-2 mx-2 max-h-[40px] rounded-md flex flex-row items-center'>
                     <img src={app.icon} className='h-[16px] mr-1'></img>
                     {app.label}
-                  </div>);
+                  </div> : null) ;
 
               })
             }
