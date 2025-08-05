@@ -1,7 +1,7 @@
 
 import './App.css'
 import thispc from './assets/computer.webp'
-import internet from './assets/internet.webp'
+import internet from './assets/internet.png'
 import bin from './assets/bin.webp'
 import pdf from './assets/pdf.png'
 import leet from './assets/twitter.png'
