@@ -3,7 +3,7 @@ import './App.css'
 import thispc from './assets/computer.webp'
 import internet from './assets/internet.webp'
 import bin from './assets/bin.webp'
-import pdf from './assets/pdf.webp'
+import pdf from './assets/pdf.png'
 import leet from './assets/twitter.png'
 import lin from './assets/lin.png'
 import git from './assets/git.png'
@@ -189,7 +189,7 @@ function App() {
                 <li className='hover:bg-blue-300/20 px-1 py-1 rounded cursor-pointer flex flex-row  items-center text-sm'><img src={thispc} className='h-[24px] mr-1'></img>This PC</li>
                 <li className='hover:bg-blue-300/20 px-1 py-1 rounded cursor-pointer flex flex-row  items-center text-sm' onDoubleClick={() => { if (!openApp.includes(9)) setOpenApp([...openApp, 9]); }}><img src={notes} className='h-[24px] mr-1'></img>Notes</li>
                 <li className='hover:bg-blue-300/20 px-1 py-1 rounded cursor-pointer flex flex-row  items-center text-sm'><img src={panel} className='h-[24px] mr-1'></img>Getting Started</li>
-                <li className='hover:bg-blue-300/20 px-1 py-1 rounded cursor-pointer flex flex-row  items-center text-sm'><img src={internet} className='h-[24px] mr-1'></img>Internet Explorer</li>
+                <li className='hover:bg-blue-300/20 px-1 py-1 rounded cursor-pointer flex flex-row  items-center text-sm' onDoubleClick={() => { if (!openApp.includes(2)) setOpenApp([...openApp, 2]); }}><img src={internet} className='h-[24px] mr-1'></img>Internet Explorer</li>
                 <li className='hover:bg-blue-300/20 px-1 py-1 rounded cursor-pointer flex flex-row  items-center text-sm'><img src={sound} className='h-[24px] mr-1'></img>Sound Settings</li>
                 <li className='hover:bg-blue-300/20 px-1 py-1 rounded cursor-pointer flex flex-row  items-center text-sm'><img src={pet} className='h-[24px] mr-1'></img>Pet</li>
                 <li className='hover:bg-blue-300/20 px-1 py-1 rounded cursor-pointer flex flex-row  items-center text-sm'><img src={wtsp} className='h-[24px] mr-1'></img>Chat</li>
